@@ -84,7 +84,7 @@ stdenv.mkDerivation rec {
   louvreWestonCloneSession = writeText "louvre-weston-clone.desktop"
     ''
       [Desktop Entry]
-      Name=louvre-westone-clone
+      Name=louvre-weston-clone
       Comment=Louvre-based example resembling weston
       Exec=@out@/bin/louvre-weston-clone
       TryExec=@out@/bin/louvre-weston-clone
@@ -96,7 +96,7 @@ stdenv.mkDerivation rec {
   postInstall = ''
     mkdir -p $out/share/wayland-sessions
     substitute ${louvreViewsSession} $out/share/wayland-sessions/louvre-views.desktop --subst-var out
-    substitute ${louvreWestonCloneSession} $out/share/wayland-sessions/louvre-westone-clone.desktop --subst-var out
+    substitute ${louvreWestonCloneSession} $out/share/wayland-sessions/louvre-weston-clone.desktop --subst-var out
   '';
 
   passthru.providedSessions = [ "louvre-views" "louvre-weston-clone" ];
