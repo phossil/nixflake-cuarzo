@@ -15,7 +15,6 @@
 , libinput
 , libseat
 , SRM
-, freeimage
 , fontconfig
 , icu
 , writeText
@@ -23,15 +22,15 @@
 
 stdenv.mkDerivation rec {
   pname = "Louvre";
-  version = "1.0.1-1";
+  version = "1.1.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = pname;
     # the release version would be used but their custom meson options
     # conflict with file persmissions when installing to the nix store
-    rev = "68cf8dd9290ea1ec68d46b3be2a89a83e261b79c";
-    hash = "sha256-lgeOb+RofEbw+x2Lx80a78TQFEL0u2mnyZoMSLshuUU=";
+    rev = "v${version}";
+    hash = "sha256-HwvX0ykl2+4MBcIixmEknFtsB0QC4w1QDzQz1589bl0=";
   };
 
   sourceRoot = "source/src";
@@ -62,7 +61,6 @@ stdenv.mkDerivation rec {
     libinput
     libseat
     SRM
-    freeimage
     xorg.xorgproto
     fontconfig
     icu
@@ -105,7 +103,7 @@ stdenv.mkDerivation rec {
     description = "C++ library for building Wayland compositors";
     homepage = "https://cuarzosoftware.github.io/Louvre/";
     maintainers = with maintainers; [ phossil ];
-    platforms = [ "x86_64-linux" ];
-    license = licenses.gpl3Only;
+    platforms = platforms.linux;
+    license = licenses.mit;
   };
 }
