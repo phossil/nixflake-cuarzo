@@ -27,8 +27,6 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = pname;
-    # the release version would be used but their custom meson options
-    # conflict with file persmissions when installing to the nix store
     rev = "v${version}";
     hash = "sha256-HwvX0ykl2+4MBcIixmEknFtsB0QC4w1QDzQz1589bl0=";
   };
