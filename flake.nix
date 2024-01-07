@@ -20,6 +20,7 @@
           Louvre = Louvre;
           SRM = SRM;
         };
+        Heaven = callPackage ./packages/heaven { };
       };
 
       # make the flake look pretty :)
