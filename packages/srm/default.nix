@@ -15,13 +15,13 @@
 
 stdenv.mkDerivation rec {
   pname = "SRM";
-  version = "0.3.2-2";
+  version = "0.4.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-9+P+nEZ+nmtViJWAuZ1RXd5E0avudDyejs5B95cbwe4=";
+    hash = "sha256-PWtDSBYw62sfyN2lpd7NY8SbqDrt5IN1rdLZRtDfals=";
   };
 
   sourceRoot = "source/src";
@@ -54,7 +54,7 @@ stdenv.mkDerivation rec {
     description = "Simple Rendering Manager";
     homepage = "https://cuarzosoftware.github.io/SRM/";
     maintainers = with maintainers; [ phossil ];
-    platforms = [ "x86_64-linux" ];
+    platforms = platforms.linux;
     license = licenses.mit;
   };
 }
