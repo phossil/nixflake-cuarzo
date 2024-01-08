@@ -16,7 +16,7 @@
         Louvre = callPackage ./packages/louvre {
           SRM = SRM;
         };
-        Crystals = qt5.callPackage ./packages/crystals {
+        Crystals = qt6Packages.callPackage ./packages/crystals {
           Louvre = Louvre;
           SRM = SRM;
         };

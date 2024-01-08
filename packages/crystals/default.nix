@@ -71,11 +71,8 @@ stdenv.mkDerivation rec {
   ];
 
   meta = with lib; {
-    # confused packager noises ???:
-    # In file included from code/Output.cpp:8:
-    # code/View.h:25:1: error: expected class-name before '{' token
-    #    25 | {
-    #       | ^
+    # it's basically a really outdated and incomplete version of what would
+    # become the louvre-views demo
     broken = true;
     description = "Wayland compositor for Cuarzo OS";
     homepage = "https://github.com/CuarzoSoftware/Crystals";
