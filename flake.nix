@@ -24,9 +24,9 @@
         QtCuarzo = qt5.callPackage ./packages/qtcuarzo {
           Heaven = Heaven;
         };
-#        Firmament = qt6Packages.callPackage ./packages/firmament {
-#          Heaven = Heaven;
-#        };
+        Firmament = qt6Packages.callPackage ./packages/firmament {
+          Heaven = Heaven;
+        };
       };
 
       # make the flake look pretty :)
