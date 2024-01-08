@@ -16,11 +16,17 @@
         Louvre = callPackage ./packages/louvre {
           SRM = SRM;
         };
-        Crystals = qt6Packages.callPackage ./packages/crystals {
+        Crystals = qt5.callPackage ./packages/crystals {
           Louvre = Louvre;
           SRM = SRM;
         };
         Heaven = callPackage ./packages/heaven { };
+        QtCuarzo = qt5.callPackage ./packages/qtcuarzo {
+          Heaven = Heaven;
+        };
+#        Firmament = qt6Packages.callPackage ./packages/firmament {
+#          Heaven = Heaven;
+#        };
       };
 
       # make the flake look pretty :)
