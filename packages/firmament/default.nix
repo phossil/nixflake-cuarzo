@@ -28,10 +28,8 @@ stdenv.mkDerivation rec {
       --replace '/opt/''$''${TARGET}' '$$PREFIX'
       # ^ idek where to begin with this one TWT
 
-    
-    # meow meow meow meow meow meow meow   
-    sed -i code/Action.h \
- 	  	-e '/#include "Object.h"/a #include <QEnterEvent>'
+    # insert include   
+    sed -e 'i#include <QEnterEvent>' -i code/Action.h
   '';
 
   strictDeps = true;
