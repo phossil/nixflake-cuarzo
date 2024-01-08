@@ -26,7 +26,7 @@
         #  srm-cuarzo = srm-cuarzo;
         #};
         heaven = callPackage ./packages/heaven { };
-        qtcuarzo = qt5.callPackage ./packages/qtcuarzo {
+        qtcuarzo = qt6Packages.callPackage ./packages/qtcuarzo {
           heaven = heaven;
         };
         firmament = qt6Packages.callPackage ./packages/firmament {

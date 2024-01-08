@@ -6,7 +6,7 @@
 , cmake
 , pkg-config
 , heaven
-, qtquickcontrols2
+, qtdeclarative
 }:
 
 stdenv.mkDerivation rec {
@@ -43,7 +43,8 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     heaven
-    qtquickcontrols2
+    qtdeclarative
+    qtbase
   ];
 
   meta = with lib; {
