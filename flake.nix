@@ -10,22 +10,27 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      # these are yet to be added to nixpkgs
+      # these are yet to be added to nixpkgs:tm:, hopefully
+      # ...
+      #
+      #
+      #
+      # pls dont steal b4 i commit to nixpkgs, leave some for me q q
       packages.${system} = with pkgs; rec {
-        SRM = callPackage ./packages/srm { };
-        Louvre = callPackage ./packages/louvre {
-          SRM = SRM;
+        srm-cuarzo = callPackage ./packages/srm { };
+        louvre = callPackage ./packages/louvre {
+          srm-cuarzo = srm-cuarzo;
         };
-        Crystals = qt6Packages.callPackage ./packages/crystals {
-          Louvre = Louvre;
-          SRM = SRM;
+        #crystals = qt6Packages.callPackage ./packages/crystals {
+        #  louvre = louvre;
+        #  srm-cuarzo = srm-cuarzo;
+        #};
+        heaven = callPackage ./packages/heaven { };
+        qtcuarzo = qt5.callPackage ./packages/qtcuarzo {
+          heaven = heaven;
         };
-        Heaven = callPackage ./packages/heaven { };
-        QtCuarzo = qt5.callPackage ./packages/qtcuarzo {
-          Heaven = Heaven;
-        };
-        Firmament = qt6Packages.callPackage ./packages/firmament {
-          Heaven = Heaven;
+        firmament = qt6Packages.callPackage ./packages/firmament {
+          heaven = heaven;
         };
       };
 

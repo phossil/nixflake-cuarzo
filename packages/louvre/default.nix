@@ -14,19 +14,19 @@
 , mesa
 , libinput
 , libseat
-, SRM
+, srm-cuarzo
 , fontconfig
 , icu
 , writeText
 }:
 
 stdenv.mkDerivation rec {
-  pname = "Louvre";
+  pname = "louvre";
   version = "1.1.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
-    repo = pname;
+    repo = "Louvre";
     rev = "v${version}";
     hash = "sha256-HwvX0ykl2+4MBcIixmEknFtsB0QC4w1QDzQz1589bl0=";
   };
@@ -58,7 +58,7 @@ stdenv.mkDerivation rec {
     mesa
     libinput
     libseat
-    SRM
+    srm-cuarzo
     xorg.xorgproto
     fontconfig
     icu

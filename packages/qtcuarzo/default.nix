@@ -5,17 +5,17 @@
 , qtbase
 , cmake
 , pkg-config
-, Heaven
+, heaven
 , qtquickcontrols2
 }:
 
 stdenv.mkDerivation rec {
-  pname = "QtCuarzo";
+  pname = "qtcuarzo";
   version = "2022-09-27";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
-    repo = pname;
+    repo = "QtCuarzo";
     rev = "e033ec90e95d51ef261cce33f64598b0cb5c7fea";
     hash = "sha256-KUw+kJX7U1QhBXWEhEFMi+JvrFc4pH7dQmBlyIFHlNY=";
   };
@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
   strictDeps = true;
 
   env.NIX_CFLAGS_COMPILE = toString [
-    "-I${Heaven}/include/Heaven"
+    "-I${heaven}/include/Heaven"
   ];
 
   postPatch = ''
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    Heaven
+    heaven
     qtquickcontrols2
   ];
 

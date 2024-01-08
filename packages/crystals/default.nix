@@ -5,7 +5,7 @@
 , qtbase
 , qmake
 , pkg-config
-, Louvre
+, louvre
 , wayland
 , libglvnd
 , udev
@@ -16,19 +16,19 @@
 , mesa
 , libinput
 , libseat
-, SRM
+, srm-cuarzo
 , freeimage
 , fontconfig
 , icu
 }:
 
 stdenv.mkDerivation rec {
-  pname = "Crystals";
+  pname = "crystals";
   version = "2023-07-06";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
-    repo = pname;
+    repo = "Crystals";
     rev = "c0cec31e62b3c3747098a608fa75d3d11d728acf";
     hash = "sha256-b8wHMPY/NSfXTaxBVn5drgkj8SZlckAs2lzXzlCDzIA=";
   };
@@ -51,7 +51,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     qtbase
-    Louvre
+    louvre
     wayland
     libglvnd
     udev
@@ -62,7 +62,7 @@ stdenv.mkDerivation rec {
     mesa
     libinput
     libseat
-    SRM
+    srm-cuarzo
     freeimage
     xorg.xorgproto
     fontconfig

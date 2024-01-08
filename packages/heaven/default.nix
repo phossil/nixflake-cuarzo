@@ -6,12 +6,12 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "Heaven";
+  pname = "heaven";
   version = "2022-09-27";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
-    repo = pname;
+    repo = "Heaven";
     rev = "22e52e01bb5855c79fa3381804b795855385be86";
     hash = "sha256-y6+aGCX1HowyJI4hIu0fMwZOKssgpXpsfXO6M3E5rWA=";
   };

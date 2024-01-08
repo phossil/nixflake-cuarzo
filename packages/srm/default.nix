@@ -14,12 +14,12 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "SRM";
+  pname = "srm-cuarzo";
   version = "0.4.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
-    repo = pname;
+    repo = "SRM";
     rev = "v${version}";
     hash = "sha256-PWtDSBYw62sfyN2lpd7NY8SbqDrt5IN1rdLZRtDfals=";
   };
@@ -51,7 +51,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "Simple Rendering Manager";
+    description = "C library for simplifying the development of Linux DRM/KMS applications";
     homepage = "https://cuarzosoftware.github.io/SRM/";
     maintainers = with maintainers; [ phossil ];
     platforms = platforms.linux;
