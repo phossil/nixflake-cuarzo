@@ -15,13 +15,13 @@
 
 stdenv.mkDerivation rec {
   pname = "srm-cuarzo";
-  version = "0.4.0-1";
+  version = "0.6.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "SRM";
     rev = "v${version}";
-    hash = "sha256-PWtDSBYw62sfyN2lpd7NY8SbqDrt5IN1rdLZRtDfals=";
+    hash = "sha256-guC2NLIg0NGyflgtrl5X2FiDKCwKd/7mglMEn56uF3Q=";
   };
 
   sourceRoot = "source/src";
@@ -43,12 +43,6 @@ stdenv.mkDerivation rec {
     libinput
     libseat
   ];
-
-  postPatch = ''
-    # outdated(?) import
-    substituteInPlace lib/SRMTypes.h \
-      --replace "<drm_fourcc.h>" "<libdrm/drm_fourcc.h>"
-  '';
 
   meta = with lib; {
     description = "C library for simplifying the development of Linux DRM/KMS applications";
