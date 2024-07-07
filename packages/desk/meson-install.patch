@@ -1,0 +1,11 @@
+diff --git a/meson.build b/meson.build
+index d97f4fd..ef7b988 100644
+--- a/meson.build
++++ b/meson.build
+@@ -20,4 +20,5 @@ moc_files = qt6.compile_moc(headers : ['src/main.cpp'],
+ 
+ executable('cuarzo-desk', headers, sources, moc_files,
+            include_directories: inc,
+-           dependencies : [qt6_dep, layerShell_dep])
++           dependencies : [qt6_dep, layerShell_dep],
++           install : true)

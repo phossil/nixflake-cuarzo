@@ -34,6 +34,9 @@
         louvre-template = callPackage ./packages/louvre-template {
           inherit louvre;
         };
+        desk = qt6Packages.callPackage ./packages/desk {
+          layer-shell-qt = kdePackages.layer-shell-qt;
+        };
       };
 
       # make the flake look pretty :)
