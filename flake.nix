@@ -31,6 +31,9 @@
         firmament = qt6Packages.callPackage ./packages/firmament {
           inherit heaven;
         };
+        louvre-template = callPackage ./packages/louvre-template {
+          inherit louvre;
+        };
       };
 
       # make the flake look pretty :)
