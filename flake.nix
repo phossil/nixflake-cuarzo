@@ -19,18 +19,17 @@
       packages.${system} = with pkgs; rec {
         srm-cuarzo = callPackage ./packages/srm { };
         louvre = callPackage ./packages/louvre {
-          srm-cuarzo = srm-cuarzo;
+          inherit srm-cuarzo;
         };
         #crystals = qt6Packages.callPackage ./packages/crystals {
-        #  louvre = louvre;
-        #  srm-cuarzo = srm-cuarzo;
+        #  inherit louvre srm-cuarzo;
         #};
         heaven = callPackage ./packages/heaven { };
         qtcuarzo = qt6Packages.callPackage ./packages/qtcuarzo {
-          heaven = heaven;
+          inherit heaven;
         };
         firmament = qt6Packages.callPackage ./packages/firmament {
-          heaven = heaven;
+          inherit heaven;
         };
       };
 

@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   };
 
   sourceRoot = "source/src";
-  
+
   postPatch = ''
     # heaven-related paths are hardcoded
     substituteInPlace Firmament.pro \
@@ -39,7 +39,7 @@ stdenv.mkDerivation rec {
     qmake
     pkg-config
   ];
-  
+
   buildInputs = [
     heaven
     qtbase
