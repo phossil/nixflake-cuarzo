@@ -4,7 +4,7 @@
     nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
   };
 
-  outputs = inputs @ { self, nixpkgs }:
+  outputs = { self, nixpkgs }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -43,7 +43,7 @@
       formatter.${system} = pkgs.nixpkgs-fmt;
 
       nixosModules = {
-        louvre-views = import ./modules/louvre-views.nix inputs;
+        louvre-views = ./modules/louvre-views.nix;
       };
     };
 }
