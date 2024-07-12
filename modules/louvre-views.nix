@@ -26,7 +26,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ louvre-views pkgs.weston ];
+    environment.systemPackages = [ louvre pkgs.weston ];
 
     hardware.opengl.enable = lib.mkDefault true;
     fonts.enableDefaultPackages = lib.mkDefault true;
