@@ -1,4 +1,4 @@
-{ config, lib, pkgs, self, ... }:
+inputs: { config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.programs.louvre-views;
