@@ -41,5 +41,9 @@
 
       # make the flake look pretty :)
       formatter.${system} = pkgs.nixpkgs-fmt;
+
+      nixosModules = {
+        louvre-views = ./modules/louvre-views.nix;
+      };
     };
 }

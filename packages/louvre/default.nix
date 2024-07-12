@@ -65,37 +65,7 @@ stdenv.mkDerivation rec {
     xorg.libX11
   ];
 
-  # Tbese can definitely be outputted in a better way but I am feeling lazy
-  louvreViewsSession = writeText "louvre-views.desktop"
-    ''
-      [Desktop Entry]
-      Name=louvre-views
-      Comment=Louvre-based example resembling the macOS X desktop
-      Exec=@out@/bin/louvre-views
-      TryExec=@out@/bin/louvre-views
-      Type=Application
-      DesktopNames=louvre
-    '';
-
-  louvreWestonCloneSession = writeText "louvre-weston-clone.desktop"
-    ''
-      [Desktop Entry]
-      Name=louvre-weston-clone
-      Comment=Louvre-based example resembling weston
-      Exec=@out@/bin/louvre-weston-clone
-      TryExec=@out@/bin/louvre-weston-clone
-      Type=Application
-      DesktopNames=louvre
-    '';
-
-  # move xsession file to appropriate path
-  postInstall = ''
-    mkdir -p $out/share/wayland-sessions
-    substitute ${louvreViewsSession} $out/share/wayland-sessions/louvre-views.desktop --subst-var out
-    substitute ${louvreWestonCloneSession} $out/share/wayland-sessions/louvre-weston-clone.desktop --subst-var out
-  '';
-
-  passthru.providedSessions = [ "louvre-views" "louvre-weston-clone" ];
+  outputs = [ "out" "bin" ];
 
   meta = with lib; {
     description = "C++ library for building Wayland compositors";
