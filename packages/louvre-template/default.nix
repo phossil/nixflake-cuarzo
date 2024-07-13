@@ -16,13 +16,13 @@
 
 stdenv.mkDerivation rec {
   pname = "louvre-template";
-  version = "2024-06-26";
+  version = "0-2024-07-08";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "LouvreTemplate";
-    rev = "1190dd549b95082dabc8b1b04de8c6997c6731df";
-    hash = "sha256-risymnW94uE+MR70nshD/y7FolK9jTphFeQdU3OUZzI=";
+    rev = "76157a75f44fca9c11d6691f1035ccc0526f0102";
+    hash = "sha256-5PfWmatwiwLpR59u07H0GC799LHWJt1ZLy5mCDKQqns=";
   };
 
   strictDeps = true;
