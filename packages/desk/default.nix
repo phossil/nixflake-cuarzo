@@ -1,13 +1,14 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, meson
-, wrapQtAppsHook
-, qtbase
-, pkg-config
-, layer-shell-qt
-, ninja
-, qttools
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  meson,
+  wrapQtAppsHook,
+  qtbase,
+  pkg-config,
+  layer-shell-qt,
+  ninja,
+  qttools,
 }:
 
 stdenv.mkDerivation rec {

@@ -1,16 +1,17 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, meson
-, pkg-config
-, libglvnd
-, udev
-, libdrm
-, mesa
-, libdisplay-info
-, libinput
-, libseat
-, ninja
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  meson,
+  pkg-config,
+  libglvnd,
+  udev,
+  libdrm,
+  mesa,
+  libdisplay-info,
+  libinput,
+  libseat,
+  ninja,
 }:
 
 stdenv.mkDerivation rec {

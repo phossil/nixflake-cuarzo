@@ -1,23 +1,24 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, meson
-, pkg-config
-, ninja
-, wayland
-, libglvnd
-, udev
-, xorg
-, libxkbcommon
-, pixman
-, libdrm
-, mesa
-, libinput
-, libseat
-, srm-cuarzo
-, fontconfig
-, icu
-, writeText
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  meson,
+  pkg-config,
+  ninja,
+  wayland,
+  libglvnd,
+  udev,
+  xorg,
+  libxkbcommon,
+  pixman,
+  libdrm,
+  mesa,
+  libinput,
+  libseat,
+  srm-cuarzo,
+  fontconfig,
+  icu,
+  writeText,
 }:
 
 stdenv.mkDerivation rec {

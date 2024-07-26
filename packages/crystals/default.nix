@@ -1,25 +1,26 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, wrapQtAppsHook
-, qtbase
-, qmake
-, pkg-config
-, louvre
-, wayland
-, libglvnd
-, udev
-, xorg
-, libxkbcommon
-, pixman
-, libdrm
-, mesa
-, libinput
-, libseat
-, srm-cuarzo
-, freeimage
-, fontconfig
-, icu
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  wrapQtAppsHook,
+  qtbase,
+  qmake,
+  pkg-config,
+  louvre,
+  wayland,
+  libglvnd,
+  udev,
+  xorg,
+  libxkbcommon,
+  pixman,
+  libdrm,
+  mesa,
+  libinput,
+  libseat,
+  srm-cuarzo,
+  freeimage,
+  fontconfig,
+  icu,
 }:
 
 stdenv.mkDerivation rec {

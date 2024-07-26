@@ -1,11 +1,12 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, wrapQtAppsHook
-, qtbase
-, qmake
-, pkg-config
-, heaven
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  wrapQtAppsHook,
+  qtbase,
+  qmake,
+  pkg-config,
+  heaven,
 }:
 
 stdenv.mkDerivation rec {

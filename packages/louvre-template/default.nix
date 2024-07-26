@@ -1,17 +1,18 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, meson
-, ninja
-, pkg-config
-, louvre
-, pixman
-, libinput
-, systemdLibs
-, wayland
-, libglvnd
-, libxkbcommon
-, libdrm
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  meson,
+  ninja,
+  pkg-config,
+  louvre,
+  pixman,
+  libinput,
+  systemdLibs,
+  wayland,
+  libglvnd,
+  libxkbcommon,
+  libdrm,
 }:
 
 stdenv.mkDerivation rec {

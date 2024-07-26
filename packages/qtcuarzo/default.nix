@@ -1,12 +1,13 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, wrapQtAppsHook
-, qtbase
-, cmake
-, pkg-config
-, heaven
-, qtdeclarative
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  wrapQtAppsHook,
+  qtbase,
+  cmake,
+  pkg-config,
+  heaven,
+  qtdeclarative,
 }:
 
 stdenv.mkDerivation rec {
@@ -24,9 +25,7 @@ stdenv.mkDerivation rec {
 
   strictDeps = true;
 
-  env.NIX_CFLAGS_COMPILE = toString [
-    "-I${heaven}/include/Heaven"
-  ];
+  env.NIX_CFLAGS_COMPILE = toString [ "-I${heaven}/include/Heaven" ];
 
   postPatch = ''
     # qt plugin path is hardcoded
