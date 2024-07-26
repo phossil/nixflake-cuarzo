@@ -22,13 +22,13 @@
 
 stdenv.mkDerivation rec {
   pname = "louvre";
-  version = "2.3.2-1";
+  version = "2.4.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "Louvre";
     rev = "v${version}";
-    hash = "sha256-Wpc9CDNNA8+pMcdVkquYIS3qyern59OH/bWchcpiVDo=";
+    hash = "sha256-j6gY6IfxZTW2l71YLbcy58Af0NQydFcXo/qI/ZiFvXU=";
   };
 
   sourceRoot = "source/src";
@@ -38,7 +38,13 @@ stdenv.mkDerivation rec {
   postPatch = ''
     # outdated(?) import
     substituteInPlace lib/core/LTexture.h \
-      --replace "<drm_fourcc.h>" "<libdrm/drm_fourcc.h>"
+      --replace-warn "<drm_fourcc.h>" "<libdrm/drm_fourcc.h>"
+    substituteInPlace backends/graphic/DRM/LGraphicBackendDRM.cpp \
+      --replace-warn "<drm_fourcc.h>" "<libdrm/drm_fourcc.h>"
+
+    # fix output path
+    substituteInPlace examples/meson.build \
+      --replace-warn "/usr/local" "$out"
   '';
 
   nativeBuildInputs = [
@@ -65,37 +71,7 @@ stdenv.mkDerivation rec {
     xorg.libX11
   ];
 
-  # Tbese can definitely be outputted in a better way but I am feeling lazy
-  louvreViewsSession = writeText "louvre-views.desktop"
-    ''
-      [Desktop Entry]
-      Name=louvre-views
-      Comment=Louvre-based example resembling the macOS X desktop
-      Exec=@out@/bin/louvre-views
-      TryExec=@out@/bin/louvre-views
-      Type=Application
-      DesktopNames=louvre
-    '';
-
-  louvreWestonCloneSession = writeText "louvre-weston-clone.desktop"
-    ''
-      [Desktop Entry]
-      Name=louvre-weston-clone
-      Comment=Louvre-based example resembling weston
-      Exec=@out@/bin/louvre-weston-clone
-      TryExec=@out@/bin/louvre-weston-clone
-      Type=Application
-      DesktopNames=louvre
-    '';
-
-  # move xsession file to appropriate path
-  postInstall = ''
-    mkdir -p $out/share/wayland-sessions
-    substitute ${louvreViewsSession} $out/share/wayland-sessions/louvre-views.desktop --subst-var out
-    substitute ${louvreWestonCloneSession} $out/share/wayland-sessions/louvre-weston-clone.desktop --subst-var out
-  '';
-
-  passthru.providedSessions = [ "louvre-views" "louvre-weston-clone" ];
+  passthru.providedSessions = [ "louvre" ];
 
   meta = with lib; {
     description = "C++ library for building Wayland compositors";
