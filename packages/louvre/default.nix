@@ -23,13 +23,13 @@
 
 stdenv.mkDerivation rec {
   pname = "louvre";
-  version = "2.4.0-1";
+  version = "2.4.1-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "Louvre";
     rev = "v${version}";
-    hash = "sha256-j6gY6IfxZTW2l71YLbcy58Af0NQydFcXo/qI/ZiFvXU=";
+    hash = "sha256-mTIlS/iJgi8B3463Z31xbcwE5gVFvVSOLlDEnKpQ0e8=";
   };
 
   sourceRoot = "source/src";
