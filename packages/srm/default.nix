@@ -16,13 +16,13 @@
 
 stdenv.mkDerivation rec {
   pname = "srm-cuarzo";
-  version = "0.7.0-1";
+  version = "0.7.1-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "SRM";
     rev = "v${version}";
-    hash = "sha256-IiHcJyF7lxS/OXU/TGRrzOGNk1kKknyZ4WxMIJshZXs=";
+    hash = "sha256-cwZWEuht4XClVUQomMKUA3GScaxv7xBxj3tJhmDYG6Y=";
   };
 
   sourceRoot = "source/src";
