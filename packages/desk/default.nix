@@ -13,7 +13,7 @@
 
 stdenv.mkDerivation rec {
   pname = "desk";
-  version = "2024-06-22";
+  version = "0-unstable-2024-06-22";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";

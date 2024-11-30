@@ -25,7 +25,7 @@
 
 stdenv.mkDerivation rec {
   pname = "crystals";
-  version = "2023-07-06";
+  version = "0-unstable-2023-07-06";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
