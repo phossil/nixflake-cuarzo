@@ -10,7 +10,7 @@
   mesa,
   libdisplay-info,
   libinput,
-  libseat,
+  seatd,
   ninja,
 }:
 
@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
     mesa
     libdisplay-info
     libinput
-    libseat
+    seatd
   ];
 
   meta = with lib; {

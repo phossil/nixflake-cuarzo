@@ -16,7 +16,7 @@
   libdrm,
   mesa,
   libinput,
-  libseat,
+  seatd,
   srm-cuarzo,
   freeimage,
   fontconfig,
@@ -62,7 +62,7 @@ stdenv.mkDerivation rec {
     libdrm
     mesa
     libinput
-    libseat
+    seatd
     srm-cuarzo
     freeimage
     xorg.xorgproto
