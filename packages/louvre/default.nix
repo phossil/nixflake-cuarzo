@@ -23,13 +23,13 @@
 
 stdenv.mkDerivation rec {
   pname = "louvre";
-  version = "2.12.0-1";
+  version = "2.13.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "Louvre";
     rev = "v${version}";
-    hash = "sha256-fQ/eaoXual8tsdffM5CESQ7FLHJEkLzAk7vm3o9q/78=";
+    hash = "sha256-ZUGan5lcE44Lt6xEvVO9Nd1ONBEvvwj8QuLDnAaenpU=";
   };
 
   sourceRoot = "source/src";
@@ -79,6 +79,6 @@ stdenv.mkDerivation rec {
     homepage = "https://cuarzosoftware.github.io/Louvre/";
     maintainers = with maintainers; [ phossil ];
     platforms = platforms.linux;
-    license = licenses.mit;
+    license = licenses.lgpl21Only;
   };
 }
