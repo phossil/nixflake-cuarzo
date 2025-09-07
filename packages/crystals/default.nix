@@ -23,7 +23,7 @@
   icu,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "crystals";
   version = "0-unstable-2023-07-06";
 

@@ -11,7 +11,7 @@
   qttools,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "desk";
   version = "0-unstable-2024-06-22";
 

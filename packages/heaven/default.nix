@@ -6,9 +6,9 @@
   ninja,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "heaven";
-  version = "2022-09-27";
+  version = "0-unstable-2022-09-27";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";

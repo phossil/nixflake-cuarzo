@@ -12,16 +12,17 @@
   libinput,
   seatd,
   ninja,
+  libgbm,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "srm-cuarzo";
   version = "0.11.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "SRM";
-    rev = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-9fs29Us2/Z6d4u0XHKaFUrjxuSDcp9zj+cyIlhAn0Eg=";
   };
 
@@ -43,6 +44,7 @@ stdenv.mkDerivation rec {
     libdisplay-info
     libinput
     seatd
+    libgbm
   ];
 
   meta = with lib; {
@@ -52,4 +54,4 @@ stdenv.mkDerivation rec {
     platforms = platforms.linux;
     license = licenses.lgpl21Only;
   };
-}
+})

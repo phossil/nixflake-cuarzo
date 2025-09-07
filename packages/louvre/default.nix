@@ -19,16 +19,17 @@
   fontconfig,
   icu,
   writeText,
+  libgbm,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "louvre";
   version = "2.13.0-1";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";
     repo = "Louvre";
-    rev = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-ZUGan5lcE44Lt6xEvVO9Nd1ONBEvvwj8QuLDnAaenpU=";
   };
 
@@ -70,6 +71,7 @@ stdenv.mkDerivation rec {
     fontconfig
     icu
     xorg.libX11
+    libgbm
   ];
 
   passthru.providedSessions = [ "louvre" ];
@@ -81,4 +83,4 @@ stdenv.mkDerivation rec {
     platforms = platforms.linux;
     license = licenses.lgpl21Only;
   };
-}
+})

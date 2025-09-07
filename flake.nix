@@ -31,6 +31,6 @@
       };
 
       # make the flake look pretty :)
-      formatter.${system} = pkgs.nixfmt-rfc-style;
+      formatter.${system} = pkgs.nixfmt-tree;
     };
 }

@@ -9,9 +9,9 @@
   heaven,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "firmament";
-  version = "2022-09-27";
+  version = "0-unstable-2022-09-27";
 
   src = fetchFromGitHub {
     owner = "CuarzoSoftware";

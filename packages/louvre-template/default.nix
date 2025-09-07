@@ -15,7 +15,7 @@
   libdrm,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "louvre-template";
   version = "0-unstable-2024-07-24";
 
